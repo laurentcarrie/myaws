@@ -14,6 +14,7 @@ if [ -f whatcmd${index}.txt ] ; then
 	aws s3 mv s3://lolo-web/whatcmd${index}.txt s3://lolo-web/working${index}.txt
 	bash whatcmd${index}.txt $d > loop${index}.txt 2>&1
 	aws s3 cp loop${index}.txt s3://lolo-web/$d/loop${index}-$d.txt
+	aws s3 cp loop${index}.txt s3://lolo-web/done${index}.txt
 	aws s3 rm s3://lolo-web/working${index}.txt
 fi
 
